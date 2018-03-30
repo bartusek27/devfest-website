@@ -1,13 +1,17 @@
 <mat-card class="speaker-card">
   <mat-card-content>
     <div class="photo-container">
-      <img class="photo" mat-card-image src="../../../assets/Elon-Musk.jpg" alt="Photo of Elon Musk">
+      <img class="photo" mat-card-image [src]="speaker.photo" alt="Photo of Elon Musk">
       <div class="info-container">
-        <h2 class="speaker-name">Elon Musk</h2>
-        <h3 class="speaker-companies">SpaceX, Tesla, Hyperloop</h3>
+        <div>
+          <h2 class="speaker-name">{{speaker.name}}</h2>
+          <h3 class="speaker-companies">{{speaker.companies}}</h3>
+        </div>
       </div>
     </div>
-    <p class="intro">I am the founder, CEO, and lead designer of SpaceX; co-founder, CEO, and product architect of Tesla.</p>
+    <p class="intro">
+      {{speaker.intro}}
+    </p>
   </mat-card-content>
   <mat-card-footer class="footer">
     <a mat-icon-button href="https://twitter.com/DevFest_CZ" target="_blank" class="link">

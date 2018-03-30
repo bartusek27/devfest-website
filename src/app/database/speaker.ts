@@ -7,4 +7,5 @@ export interface Speaker {
   about: string;
   intro: string;
   residence: string;
+  companies: string;
 }

@@ -1,7 +1,7 @@
 <section>
   <div class="background-gradient" *ngIf="speakers$ | async;let speakers; else loading">
     <div class="container">
-      <app-speaker-card></app-speaker-card>
+      <app-speaker-card *ngFor="let speaker of speakers" class="speaker-card" [id]="speaker.id"></app-speaker-card>
     </div>
   </div>
   <ng-template #loading>
