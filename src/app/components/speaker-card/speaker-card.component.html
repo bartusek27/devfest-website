@@ -14,14 +14,23 @@
     </p>
   </mat-card-content>
   <mat-card-footer class="footer">
-    <a mat-icon-button href="https://twitter.com/DevFest_CZ" target="_blank" class="link">
+    <a *ngIf="speaker.twitter" mat-icon-button [href]="'https://twitter.com/' + speaker.twitter" target="_blank" class="link">
       <mat-icon svgIcon="twitter" class="icon"></mat-icon>
     </a>
-    <a mat-icon-button href="https://www.instagram.com/devfestcz/" target="_blank" class="link">
+    <a *ngIf="speaker.instagram" mat-icon-button [href]="'https://www.instagram.com/' + speaker.instagram" target="_blank" class="link">
       <mat-icon svgIcon="instagram" class="icon"></mat-icon>
     </a>
-    <a mat-icon-button href="https://www.facebook.com/DevFestCZ" target="_blank" class="link">
+    <a *ngIf="speaker.facebook" mat-icon-button [href]="'https://www.facebook.com/' + speaker.facebook" target="_blank" class="link">
       <mat-icon svgIcon="facebook" class="icon"></mat-icon>
+    </a>
+    <a *ngIf="speaker.googlePlus" mat-icon-button [href]="'https://plus.google.com/' + speaker.googlePlus" target="_blank" class="link">
+      <mat-icon svgIcon="google-plus" class="icon"></mat-icon>
+    </a>
+    <a *ngIf="speaker.linkedIn" mat-icon-button [href]="'https://www.linkedin.com/in/' + speaker.linkedIn" target="_blank" class="link">
+      <mat-icon svgIcon="linked-in" class="icon"></mat-icon>
+    </a>
+    <a *ngIf="speaker.web" mat-icon-button [href]="speaker.web" target="_blank" class="link">
+      <mat-icon svgIcon="web" class="icon"></mat-icon>
     </a>
   </mat-card-footer>
 </mat-card>

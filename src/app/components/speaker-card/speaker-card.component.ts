@@ -48,6 +48,15 @@ export class SpeakerCardComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'instagram',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/instagram.svg'));
+    iconRegistry.addSvgIcon(
+      'google-plus',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/google-plus.svg'));
+    iconRegistry.addSvgIcon(
+      'linked-in',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/linked-in.svg'));
+    iconRegistry.addSvgIcon(
+      'web',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/web.svg'));
   }
 
   ngOnInit() {

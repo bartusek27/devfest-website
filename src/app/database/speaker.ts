@@ -8,4 +8,10 @@ export interface Speaker {
   intro: string;
   residence: string;
   companies: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  googlePlus?: string;
+  linkedIn?: string;
+  web?: string;
 }
