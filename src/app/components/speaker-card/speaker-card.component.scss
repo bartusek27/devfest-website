@@ -1,5 +1,7 @@
 $card-width: 352px;
+$card-height: 568px;
 .speaker-card {
+  height: 568px;
   width: $card-width;
   .photo-container {
     margin: 0;
@@ -57,6 +59,13 @@ $card-width: 352px;
         width: 36px;
       }
     }
+  }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $card-height - 48px;
   }
 
 }

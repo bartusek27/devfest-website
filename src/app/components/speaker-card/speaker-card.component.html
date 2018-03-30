@@ -1,7 +1,7 @@
-<mat-card class="speaker-card">
-  <mat-card-content>
+<mat-card class="speaker-card" [@slideInRight]>
+  <mat-card-content *ngIf="profileUrl | async;let url;else loadingImage">
     <div class="photo-container">
-      <img class="photo" mat-card-image [src]="speaker.photo" alt="Photo of Elon Musk">
+      <img class="photo" mat-card-image [src]="url" alt="Photo of Elon Musk">
       <div class="info-container">
         <div>
           <h2 class="speaker-name">{{speaker.name}}</h2>
@@ -25,3 +25,8 @@
     </a>
   </mat-card-footer>
 </mat-card>
+<ng-template #loadingImage>
+    <mat-card-content class="spinner-container">
+      <mat-spinner [diameter]="175"></mat-spinner>
+    </mat-card-content>
+</ng-template>
