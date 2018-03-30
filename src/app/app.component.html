@@ -1,6 +1,36 @@
-<section>
-  <router-outlet ></router-outlet>
-</section>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <div class="branding"><img src="assets/cover-logo.png"/></div>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of navigation" (click)="sidenav.close()"
+         [routerLink]="[item.link]">
+        {{item.label}}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div class="wrapper">
+    <div class="toolbar">
+      <mat-toolbar>
+        <button mat-icon-button *ngIf="mobile" (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button class="logo-button" *ngIf="!route.match('Home')" [routerLink]="['/']" mat-button [@fadeInOut]>
+          <img class="home-logo" src="assets/cover-logo.png"/>
+        </button>
+        <span class="spacer"></span>
+        <div class="button-row" *ngIf="!mobile">
+          <a *ngFor="let item of navigation" class="nav-button" mat-button [routerLink]="[item.link]"
+             color="accent" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">{{item.label}}
+          </a>
+        </div>
+      </mat-toolbar>
+    </div>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 <footer>
   <app-footer></app-footer>
 </footer>
+  <mat-sidenav-container>
